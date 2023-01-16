@@ -1,0 +1,26 @@
+
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #F6F7FA;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    margin: 0;
+    padding: 0;
+}
+
+.el-row {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
