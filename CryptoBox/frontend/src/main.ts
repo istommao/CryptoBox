@@ -5,6 +5,8 @@ import HelloWorldVue from './components/HelloWorld.vue';
 import Ed25519Vue from './components/Ed25519.vue';
 import X25519Page from './components/X25519.vue';
 
+import 'element-plus/theme-chalk/dark/css-vars.css'
+
 
 const routes = [
     { path: '/', component: HelloWorldVue, name: "Home" },

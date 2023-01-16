@@ -1,9 +1,9 @@
 <template>
-  <el-row class="tac">
-    <el-col :span="3" style="background: white;">
+  <el-row class="tac" style="border-top: 1px solid #ececec">
+    <el-col :span="4" style="border-right: 1px solid var(--el-menu-border-color)">
       <!-- <h5 class="mb-2">Default colors</h5> -->
       <el-menu
-        default-active="2"
+        default-active="1"
         class="el-menu-vertical-demo"
         @open="handleOpen"
         @close="handleClose"
@@ -43,15 +43,11 @@
             <el-menu-item index="1-2">SHA2</el-menu-item>
             <el-menu-item index="1-2">SHA3</el-menu-item>
           </el-menu-item-group>
-
         </el-sub-menu>
-
-
-
       </el-menu>
     </el-col>
-    <el-col :span="21">
-        <div style="margin: 15px">
+    <el-col :span="20">
+        <div class="MainBox">
             <router-view></router-view>
         </div>
     </el-col>
