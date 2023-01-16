@@ -1,8 +1,8 @@
-module changeme
+module cryptolab
 
 go 1.18
 
-require github.com/wailsapp/wails/v2 v2.2.0
+require github.com/wailsapp/wails/v2 v2.3.1
 
 require (
 	github.com/bep/debounce v1.2.1 // indirect

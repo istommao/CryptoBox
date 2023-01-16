@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"cryptolab/codebox"
 	"fmt"
 )
 
@@ -24,4 +25,15 @@ func (a *App) startup(ctx context.Context) {
 // Greet returns a greeting for the given name
 func (a *App) Greet(name string) string {
 	return fmt.Sprintf("Hello %s, It's show time!", name)
+}
+
+func (a *App) CreateEd25519KeyPair(format string) *codebox.KeyPair {
+	privateKey, pubkey := codebox.CreateEd25519KeyPair(format)
+	// fmt.Println(privateKey, pubkey)
+
+	keyPair := &codebox.KeyPair{
+		PrivateKey: privateKey,
+		PublicKey:  pubkey,
+	}
+	return keyPair
 }
