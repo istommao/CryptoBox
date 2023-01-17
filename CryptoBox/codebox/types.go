@@ -33,3 +33,10 @@ type SHA3Result struct {
 	SHA3_384 string `json:"sha3_384"`
 	SHA3_512 string `json:"sha3_512"`
 }
+
+type RSAKeyPair struct {
+	PrivateKey string `json:"PrivateKey"`
+	PublicKey  string `json:"PublicKey"`
+
+	ErrMsg string `json:"errmsg"`
+}

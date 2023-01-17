@@ -17,11 +17,12 @@ func main() {
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:     "CryptoBox",
-		Width:     1024,
-		Height:    768,
-		MinWidth:  1024,
-		MinHeight: 768,
+		Title:  "CryptoBox",
+		Width:  1140,
+		Height: 900,
+
+		MinWidth:  1140,
+		MinHeight: 900,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},

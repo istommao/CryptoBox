@@ -4,6 +4,8 @@ import {codebox} from '../models';
 
 export function CreateEd25519KeyPair(arg1:string):Promise<codebox.KeyPair>;
 
+export function CreateRSAKeyPair(arg1:number):Promise<codebox.RSAKeyPair>;
+
 export function CreateSHA1MD5Hash(arg1:string):Promise<codebox.SHA1MD5Result>;
 
 export function CreateSHA2Hash(arg1:string):Promise<codebox.SHA2Result>;

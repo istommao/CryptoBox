@@ -88,3 +88,25 @@ func (a *App) CreateSHA2Hash(msg string) *codebox.SHA2Result {
 func (a *App) CreateSHA3Hash(msg string) *codebox.SHA3Result {
 	return codebox.CreateSHA3Hash(msg)
 }
+
+func (a *App) CreateRSAKeyPair(keySize int) *codebox.RSAKeyPair {
+	resp := &codebox.RSAKeyPair{}
+
+	prvKey, err := codebox.CreateRSAKeyPair(keySize)
+	if err != nil {
+		resp.ErrMsg = err.Error()
+		return resp
+	}
+
+	PrivateKeyStr := codebox.ExportRsaPrivateKeyAsPemStr(prvKey)
+	resp.PrivateKey = PrivateKeyStr
+
+	PubkeyStr, err := codebox.ExportRsaPublicKeyAsPemStr(&prvKey.PublicKey)
+	if err != nil {
+		resp.ErrMsg = err.Error()
+	} else {
+		resp.PublicKey = PubkeyStr
+	}
+
+	return resp
+}

@@ -7,6 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AES: typeof import('./components/AES.vue')['default']
+    ChaCha20: typeof import('./components/ChaCha20.vue')['default']
     Ed25519: typeof import('./components/Ed25519.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
@@ -22,6 +24,7 @@ declare module '@vue/runtime-core' {
     HomePage: typeof import('./components/HomePage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    RSA: typeof import('./components/RSA.vue')['default']
     SHA1_MD5: typeof import('./components/SHA1_MD5.vue')['default']
     SHA2: typeof import('./components/SHA2.vue')['default']
     SHA3: typeof import('./components/SHA3.vue')['default']

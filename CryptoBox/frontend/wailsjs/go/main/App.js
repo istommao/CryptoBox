@@ -6,6 +6,10 @@ export function CreateEd25519KeyPair(arg1) {
   return window['go']['main']['App']['CreateEd25519KeyPair'](arg1);
 }
 
+export function CreateRSAKeyPair(arg1) {
+  return window['go']['main']['App']['CreateRSAKeyPair'](arg1);
+}
+
 export function CreateSHA1MD5Hash(arg1) {
   return window['go']['main']['App']['CreateSHA1MD5Hash'](arg1);
 }

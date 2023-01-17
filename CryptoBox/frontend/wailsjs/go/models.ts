@@ -14,6 +14,22 @@ export namespace codebox {
 	        this.PublicKey = source["PublicKey"];
 	    }
 	}
+	export class RSAKeyPair {
+	    PrivateKey: string;
+	    PublicKey: string;
+	    errmsg: string;
+	
+	    static createFrom(source: any = {}) {
+	        return new RSAKeyPair(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.PrivateKey = source["PrivateKey"];
+	        this.PublicKey = source["PublicKey"];
+	        this.errmsg = source["errmsg"];
+	    }
+	}
 	export class SHA1MD5Result {
 	    sha1: string;
 	    md5: string;
