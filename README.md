@@ -1,2 +1,7 @@
 # CryptoBox
-A Cryptography ToolBox based on tauri
+A Cryptography ToolBox based on wails
+
+https://wails.io/
+
+
+[!screenshot.png](./screenshot.png)

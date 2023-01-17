@@ -21,7 +21,7 @@
           <div style="margin-top: 20px">
           </div>
           <el-input size="large" maxlength="128" show-word-limit v-model="SignContent" rows="3" type="textarea"
-            placeholder="Sign Content" />
+            placeholder="Sign Content" spellcheck="false" />
           <div style="margin-top: 20px">
           </div>
           <el-input size="large" maxlength="128" show-word-limit v-model="Signature" rows="3" type="textarea"

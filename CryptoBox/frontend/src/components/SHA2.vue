@@ -8,7 +8,7 @@
           <div style="margin-top: 20px">
           </div>
           <el-input size="large" maxlength="128" show-word-limit v-model="PlainText" rows="3" type="textarea"
-            placeholder="Plain Text" />
+            placeholder="Plain Text" spellcheck="false" />
             <div style="margin-top: 20px">
           </div>
 
