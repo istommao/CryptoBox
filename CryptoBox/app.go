@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"cryptolab/codebox"
+	"encoding/base64"
+	"encoding/hex"
 	"fmt"
 )
 
@@ -36,4 +38,27 @@ func (a *App) CreateEd25519KeyPair(format string) *codebox.KeyPair {
 		PublicKey:  pubkey,
 	}
 	return keyPair
+}
+
+func (a *App) Ed25519Sign(PrivateKeyStr string, PublicKeyStr string, msg string, format string) *codebox.SignResult {
+	GoPrivateKeyStr := PublicKeyStr + PrivateKeyStr
+	SignByte, err := codebox.Ed25519Sign(GoPrivateKeyStr, msg)
+
+	var signature string
+
+	if format == "base64" {
+		signature = base64.StdEncoding.EncodeToString(SignByte)
+	} else {
+		signature = hex.EncodeToString(SignByte)
+	}
+
+	resp := &codebox.SignResult{
+		Signature: signature,
+	}
+
+	if err != nil {
+		resp.ErrMsg = err.Error()
+	}
+
+	return resp
 }

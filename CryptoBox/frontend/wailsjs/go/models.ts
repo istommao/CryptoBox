@@ -14,6 +14,20 @@ export namespace codebox {
 	        this.PublicKey = source["PublicKey"];
 	    }
 	}
+	export class SignResult {
+	    signature: string;
+	    errmsg: string;
+	
+	    static createFrom(source: any = {}) {
+	        return new SignResult(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.signature = source["signature"];
+	        this.errmsg = source["errmsg"];
+	    }
+	}
 
 }
 

@@ -5,6 +5,7 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"encoding/hex"
+	"errors"
 
 	"fmt"
 	"os"
@@ -33,4 +34,58 @@ func CreateEd25519KeyPair(format string) (string, string) {
 	}
 
 	return PrivateKey, PubKey
+}
+
+func Ed25519Sign(PrivateKeyStr string, msg string) ([]byte, error) {
+	var privb []byte
+	var err error
+	if len(PrivateKeyStr) == 128 {
+		privb, err = hex.DecodeString(PrivateKeyStr)
+	} else {
+		privb, err = base64.StdEncoding.DecodeString(PrivateKeyStr)
+	}
+
+	if err != nil {
+		return []byte{}, err
+	}
+
+	if len(privb) != 64 {
+		return nil, errors.New("invalid private key size")
+	}
+
+	result := ed25519.Sign(privb, []byte(msg))
+
+	return result, nil
+}
+
+func Ed25519Verify(PubKeyStr string, msg string, signatureStr string) (bool, error) {
+	msgByte := []byte(msg)
+
+	if PubKeyStr == "" {
+		return false, errors.New("invalid pubkey")
+	}
+
+	var PublicKey []byte
+	var err error
+
+	if len(PubKeyStr) == 64 {
+		PublicKey, err = hex.DecodeString(PubKeyStr)
+		if err != nil {
+			return false, err
+		}
+	} else {
+		PublicKey, err = base64.StdEncoding.DecodeString(PubKeyStr)
+		if err != nil {
+			return false, err
+		}
+	}
+
+	signature, err := base64.StdEncoding.DecodeString(signatureStr)
+	if err != nil {
+		return false, err
+	}
+
+	isValid := ed25519.Verify(PublicKey, msgByte, signature)
+
+	return isValid, nil
 }

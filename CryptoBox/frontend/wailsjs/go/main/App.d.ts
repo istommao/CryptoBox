@@ -4,4 +4,6 @@ import {codebox} from '../models';
 
 export function CreateEd25519KeyPair(arg1:string):Promise<codebox.KeyPair>;
 
+export function Ed25519Sign(arg1:string,arg2:string,arg3:string,arg4:string):Promise<codebox.SignResult>;
+
 export function Greet(arg1:string):Promise<string>;

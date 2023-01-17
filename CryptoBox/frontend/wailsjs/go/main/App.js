@@ -6,6 +6,10 @@ export function CreateEd25519KeyPair(arg1) {
   return window['go']['main']['App']['CreateEd25519KeyPair'](arg1);
 }
 
+export function Ed25519Sign(arg1, arg2, arg3, arg4) {
+  return window['go']['main']['App']['Ed25519Sign'](arg1, arg2, arg3, arg4);
+}
+
 export function Greet(arg1) {
   return window['go']['main']['App']['Greet'](arg1);
 }
