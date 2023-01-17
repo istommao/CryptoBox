@@ -10,6 +10,7 @@ import X25519Page from './components/X25519.vue';
 
 import 'element-plus/theme-chalk/dark/css-vars.css'
 
+import 'element-plus/dist/index.css'
 
 const routes = [
     { path: '/', component: HomePage, name: "Home" },

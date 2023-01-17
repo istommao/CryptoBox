@@ -24,6 +24,9 @@ func CreateEd25519KeyPair(format string) (string, string) {
 	pubBuf := make([]byte, len(pub))
 	copy(pubBuf, pub)
 
+	// fmt.Println("privKeyBuf: ", privKeyBuf)
+	// fmt.Println("pubBuf: ", pubBuf)
+
 	var PrivateKey, PubKey string
 	if format == "hex" {
 		PrivateKey = hex.EncodeToString(privKeyBuf[:32])
@@ -39,6 +42,7 @@ func CreateEd25519KeyPair(format string) (string, string) {
 func Ed25519Sign(PrivateKeyStr string, msg string) ([]byte, error) {
 	var privb []byte
 	var err error
+	fmt.Println(">>>>: ", PrivateKeyStr)
 	if len(PrivateKeyStr) == 128 {
 		privb, err = hex.DecodeString(PrivateKeyStr)
 	} else {

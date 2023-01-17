@@ -41,7 +41,7 @@ func (a *App) CreateEd25519KeyPair(format string) *codebox.KeyPair {
 }
 
 func (a *App) Ed25519Sign(PrivateKeyStr string, PublicKeyStr string, msg string, format string) *codebox.SignResult {
-	GoPrivateKeyStr := PublicKeyStr + PrivateKeyStr
+	GoPrivateKeyStr := PrivateKeyStr + PublicKeyStr
 	SignByte, err := codebox.Ed25519Sign(GoPrivateKeyStr, msg)
 
 	var signature string
@@ -54,6 +54,20 @@ func (a *App) Ed25519Sign(PrivateKeyStr string, PublicKeyStr string, msg string,
 
 	resp := &codebox.SignResult{
 		Signature: signature,
+	}
+
+	if err != nil {
+		resp.ErrMsg = err.Error()
+	}
+
+	return resp
+}
+
+func (a *App) Ed25519Verify(PubkeyStr string, msg string, signature string) *codebox.SignVerifyResult {
+	isvalid, err := codebox.Ed25519Verify(PubkeyStr, msg, signature)
+
+	resp := &codebox.SignVerifyResult{
+		IsValid: isvalid,
 	}
 
 	if err != nil {

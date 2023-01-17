@@ -28,6 +28,20 @@ export namespace codebox {
 	        this.errmsg = source["errmsg"];
 	    }
 	}
+	export class SignVerifyResult {
+	    isvalid: boolean;
+	    errmsg: string;
+	
+	    static createFrom(source: any = {}) {
+	        return new SignVerifyResult(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.isvalid = source["isvalid"];
+	        this.errmsg = source["errmsg"];
+	    }
+	}
 
 }
 
