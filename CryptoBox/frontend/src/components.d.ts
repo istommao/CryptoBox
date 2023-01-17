@@ -22,6 +22,9 @@ declare module '@vue/runtime-core' {
     HomePage: typeof import('./components/HomePage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SHA1_MD5: typeof import('./components/SHA1_MD5.vue')['default']
+    SHA2: typeof import('./components/SHA2.vue')['default']
+    SHA3: typeof import('./components/SHA3.vue')['default']
     X25519: typeof import('./components/X25519.vue')['default']
   }
 }

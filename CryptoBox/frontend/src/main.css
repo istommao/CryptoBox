@@ -46,3 +46,9 @@ a {
     padding: 15px;
     height: calc(100% - 60px);
 }
+.router-link-active {
+    color: red !important;
+}
+.el-menu-item.is-active {
+    background-color: #ECF5FF;
+}

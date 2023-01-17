@@ -6,6 +6,18 @@ export function CreateEd25519KeyPair(arg1) {
   return window['go']['main']['App']['CreateEd25519KeyPair'](arg1);
 }
 
+export function CreateSHA1MD5Hash(arg1) {
+  return window['go']['main']['App']['CreateSHA1MD5Hash'](arg1);
+}
+
+export function CreateSHA2Hash(arg1) {
+  return window['go']['main']['App']['CreateSHA2Hash'](arg1);
+}
+
+export function CreateSHA3Hash(arg1) {
+  return window['go']['main']['App']['CreateSHA3Hash'](arg1);
+}
+
 export function Ed25519Sign(arg1, arg2, arg3, arg4) {
   return window['go']['main']['App']['Ed25519Sign'](arg1, arg2, arg3, arg4);
 }

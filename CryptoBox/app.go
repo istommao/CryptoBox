@@ -76,3 +76,15 @@ func (a *App) Ed25519Verify(PubkeyStr string, msg string, signature string) *cod
 
 	return resp
 }
+
+func (a *App) CreateSHA1MD5Hash(msg string) *codebox.SHA1MD5Result {
+	return codebox.CreateSHA1MD5Hash(msg)
+}
+
+func (a *App) CreateSHA2Hash(msg string) *codebox.SHA2Result {
+	return codebox.CreateSHA2Hash(msg)
+}
+
+func (a *App) CreateSHA3Hash(msg string) *codebox.SHA3Result {
+	return codebox.CreateSHA3Hash(msg)
+}
