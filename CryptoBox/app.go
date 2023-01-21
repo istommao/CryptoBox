@@ -119,7 +119,7 @@ func (a *App) CreateX25519KeyPair() *codebox.KeyPair {
 	return resp
 }
 
-func (a *App) AesGCMEncrypt(keyStr string, plainText string, nonceStr string) *codebox.AesResult {
+func (a *App) AesGCMEncrypt(keyStr string, plainText string, nonceStr string, outputFormat string) *codebox.AesResult {
 	AesResultData := &codebox.AesResult{}
 
 	key, err := hex.DecodeString(keyStr)
@@ -142,9 +142,14 @@ func (a *App) AesGCMEncrypt(keyStr string, plainText string, nonceStr string) *c
 
 		return AesResultData
 	}
+	if outputFormat == "hex" {
+		AesResultData.Format = "hex"
+		AesResultData.CipherText = hex.EncodeToString(resultBytes)
 
-	AesResultData.Format = "hex"
-	AesResultData.CipherText = hex.EncodeToString(resultBytes)
+	} else {
+		AesResultData.Format = "base64"
+		AesResultData.CipherText = base64.StdEncoding.EncodeToString(resultBytes)
+	}
 
 	return AesResultData
 }

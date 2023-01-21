@@ -25,8 +25,13 @@
                <div style="margin-top: 20px">
                </div>
                <el-input size="large" type="textarea" rows="6" spellcheck="false" maxlength="1024" show-word-limit v-model="PlainText" placeholder="Plain Text" />
-               <div style="margin: 20px 0 20px 0">
-                  <el-button type="primary" @click="EncryptResult">Encrypt</el-button>
+               <div style="margin: 20px 0 20px 0; display: flex">
+                  <el-button size="large" type="primary" @click="EncryptResult">Encrypt</el-button>
+                  &nbsp;&nbsp;
+                  <el-radio-group v-model="OutputFormat" size="large">
+                  <el-radio-button label="base64"  />
+                  <el-radio-button label="hex" />
+               </el-radio-group>
                </div>
                <el-input size="large" type="textarea" rows="6" spellcheck="false" maxlength="1024" show-word-limit v-model="CipherText" placeholder="Cipher Text" />
             </el-card>
@@ -47,6 +52,8 @@ const KeySize = ref(128);
 
 const PlainText = ref("");
 const CipherText = ref("");
+
+const OutputFormat = ref("base64");
 
 const Nonce = ref("");
 
@@ -87,7 +94,7 @@ const RandomAesKeyAction = async () => {
 
 const EncryptResult = async () => {
 
-  let resp = await AesGCMEncrypt(AESKey.value, PlainText.value, Nonce.value);
+  let resp = await AesGCMEncrypt(AESKey.value, PlainText.value, Nonce.value, OutputFormat.value);
 
 //   console.log(">>>>", resp);
 
