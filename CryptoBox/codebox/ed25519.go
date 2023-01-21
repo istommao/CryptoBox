@@ -42,7 +42,9 @@ func CreateEd25519KeyPair(format string) (string, string) {
 func Ed25519Sign(PrivateKeyStr string, msg string) ([]byte, error) {
 	var privb []byte
 	var err error
-	fmt.Println(">>>>: ", PrivateKeyStr)
+
+	// fmt.Println(">>>>: ", PrivateKeyStr)
+
 	if len(PrivateKeyStr) == 128 {
 		privb, err = hex.DecodeString(PrivateKeyStr)
 	} else {

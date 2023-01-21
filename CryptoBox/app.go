@@ -110,3 +110,41 @@ func (a *App) CreateRSAKeyPair(keySize int) *codebox.RSAKeyPair {
 
 	return resp
 }
+
+func (a *App) CreateX25519KeyPair() *codebox.KeyPair {
+	PrivateKey, PubKey := codebox.CreateX25519KeyPair()
+
+	resp := &codebox.KeyPair{PrivateKey: PrivateKey, PublicKey: PubKey}
+
+	return resp
+}
+
+func (a *App) AesGCMEncrypt(keyStr string, plainText string, nonceStr string) *codebox.AesResult {
+	AesResultData := &codebox.AesResult{}
+
+	key, err := hex.DecodeString(keyStr)
+	if err != nil {
+		AesResultData.ErrMsg = err.Error()
+
+		return AesResultData
+	}
+
+	nonce, err := hex.DecodeString(nonceStr)
+	if err != nil {
+		AesResultData.ErrMsg = err.Error()
+
+		return AesResultData
+	}
+
+	resultBytes, err := codebox.AesGCMEncrypt(key, plainText, nonce, nil)
+	if err != nil {
+		AesResultData.ErrMsg = err.Error()
+
+		return AesResultData
+	}
+
+	AesResultData.Format = "hex"
+	AesResultData.CipherText = hex.EncodeToString(resultBytes)
+
+	return AesResultData
+}

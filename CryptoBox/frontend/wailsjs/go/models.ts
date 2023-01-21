@@ -1,5 +1,21 @@
 export namespace codebox {
 	
+	export class AesResult {
+	    CipherText: string;
+	    format: string;
+	    errmsg: string;
+	
+	    static createFrom(source: any = {}) {
+	        return new AesResult(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.CipherText = source["CipherText"];
+	        this.format = source["format"];
+	        this.errmsg = source["errmsg"];
+	    }
+	}
 	export class KeyPair {
 	    PrivateKey: string;
 	    PublicKey: string;

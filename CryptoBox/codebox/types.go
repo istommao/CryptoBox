@@ -40,3 +40,10 @@ type RSAKeyPair struct {
 
 	ErrMsg string `json:"errmsg"`
 }
+
+type AesResult struct {
+	CipherText string `json:"CipherText"`
+	Format     string `json:"format"`
+
+	ErrMsg string `json:"errmsg"`
+}
