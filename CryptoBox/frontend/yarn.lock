@@ -83,6 +83,11 @@
   "resolved" "https://registry.npmmirror.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.14.tgz"
   "version" "1.4.14"
 
+"@noble/ed25519@^1.7.1":
+  "integrity" "sha512-Rk4SkJFaXZiznFyC/t77Q0NKS4FL7TLJJsVG2V2oiEq3kJVeTdxysEe/yRWSpnWMe808XRDJ+VFh5pt/FN5plw=="
+  "resolved" "https://registry.npmmirror.com/@noble/ed25519/-/ed25519-1.7.1.tgz"
+  "version" "1.7.1"
+
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
   "resolved" "https://registry.npmmirror.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -122,6 +127,36 @@
     "@types/estree" "^1.0.0"
     "estree-walker" "^2.0.2"
     "picomatch" "^2.3.1"
+
+"@stablelib/base64@^1.0.1":
+  "integrity" "sha512-1bnPQqSxSuc3Ii6MhBysoWCg58j97aUjuCSZrGSmDxNqtytIi0k8utUenAwTZN4V5mXXYGsVUI9zeBqy+jBOSQ=="
+  "resolved" "https://registry.npmmirror.com/@stablelib/base64/-/base64-1.0.1.tgz"
+  "version" "1.0.1"
+
+"@stablelib/binary@^1.0.1":
+  "integrity" "sha512-ClJWvmL6UBM/wjkvv/7m5VP3GMr9t0osr4yVgLZsLCOz4hGN9gIAFEqnJ0TsSMAN+n840nf2cHZnA5/KFqHC7Q=="
+  "resolved" "https://registry.npmmirror.com/@stablelib/binary/-/binary-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "@stablelib/int" "^1.0.1"
+
+"@stablelib/chacha@^1.0.1":
+  "integrity" "sha512-Pmlrswzr0pBzDofdFuVe1q7KdsHKhhU24e8gkEwnTGOmlC7PADzLVxGdn2PoNVBBabdg0l/IfLKg6sHAbTQugg=="
+  "resolved" "https://registry.npmmirror.com/@stablelib/chacha/-/chacha-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "@stablelib/binary" "^1.0.1"
+    "@stablelib/wipe" "^1.0.1"
+
+"@stablelib/int@^1.0.1":
+  "integrity" "sha512-byr69X/sDtDiIjIV6m4roLVWnNNlRGzsvxw+agj8CIEazqWGOQp2dTYgQhtyVXV9wpO6WyXRQUzLV/JRNumT2w=="
+  "resolved" "https://registry.npmmirror.com/@stablelib/int/-/int-1.0.1.tgz"
+  "version" "1.0.1"
+
+"@stablelib/wipe@^1.0.1":
+  "integrity" "sha512-WfqfX/eXGiAd3RJe4VU2snh/ZPwtSjLG4ynQ/vYzvghTh7dHFcI1wl+nrkWG6lGhukOxOsUHfv8dUXr58D0ayg=="
+  "resolved" "https://registry.npmmirror.com/@stablelib/wipe/-/wipe-1.0.1.tgz"
+  "version" "1.0.1"
 
 "@types/estree@^1.0.0":
   "integrity" "sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ=="
@@ -605,6 +640,11 @@
   "integrity" "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
   "resolved" "https://registry.npmmirror.com/isexe/-/isexe-2.0.0.tgz"
   "version" "2.0.0"
+
+"js-chacha20@^1.1.0":
+  "integrity" "sha512-ML5/rujYI/iYydrkIdf+JtUyjmiTWd4UgxNkEmIQ/rltgHzgtzlYJnnMETxPTFGnivEWynZca4YXUoZlxVtjqA=="
+  "resolved" "https://registry.npmmirror.com/js-chacha20/-/js-chacha20-1.1.0.tgz"
+  "version" "1.1.0"
 
 "jsonc-parser@^3.2.0":
   "integrity" "sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w=="
